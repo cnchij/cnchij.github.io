@@ -81,6 +81,32 @@ th small.id{display:block;font-weight:400;color:var(--mu);font-size:10.5px}.sm s
 :root[data-theme="dark"]{--bg:#11151b;--card:#1a202a;--tx:#e6ebf2;--mu:#9aa6b6;--bd:#2a3340}
 .mc{border-left:4px solid var(--bc,var(--bd));background:color-mix(in srgb,var(--bc,transparent) 17%,var(--card))}
 .mc{border:1px solid color-mix(in srgb,var(--bc,var(--bd)) 45%,var(--card));border-left:5px solid var(--bc,var(--bd));background:color-mix(in srgb,var(--bc,transparent) 15%,var(--card));overflow:hidden}.mc.l1,.mc.l2{border-left-color:var(--bc)}.mc .mh{background:color-mix(in srgb,var(--bc,var(--bd)) 34%,var(--card));color:var(--tx);margin:-8px -10px 2px;padding:6px 10px}.mc .mh span{color:var(--tx);opacity:.7;font-weight:600}.mc.add{background:transparent;border:1px dashed var(--bd)}
+
+.app{position:relative;z-index:1}#toast{z-index:50}
+:root{--glass:rgba(255,255,255,.68);--glass2:rgba(255,255,255,.84);--gbd:rgba(255,255,255,.8);--bd:#d3dcea;--sh:0 8px 32px rgba(90,100,170,.12)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--glass:rgba(32,38,56,.55);--glass2:rgba(32,38,56,.82);--gbd:rgba(255,255,255,.09);--bd:#2c3446;--sh:0 8px 32px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--glass:rgba(32,38,56,.55);--glass2:rgba(32,38,56,.82);--gbd:rgba(255,255,255,.09);--bd:#2c3446;--sh:0 8px 32px rgba(0,0,0,.35)}
+body{background:radial-gradient(38vmax 38vmax at 6% 75%,rgba(79,140,255,.55),transparent),radial-gradient(30vmax 30vmax at 22% 102%,rgba(236,132,196,.45),transparent),radial-gradient(34vmax 34vmax at 80% 38%,rgba(255,163,140,.45),transparent),radial-gradient(32vmax 32vmax at 96% 92%,rgba(244,114,182,.40),transparent),radial-gradient(34vmax 34vmax at 58% -6%,rgba(160,140,250,.32),transparent),linear-gradient(135deg,#dfe9fa,#eaeefb 50%,#f3ebf6);background-attachment:fixed}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background:radial-gradient(38vmax 38vmax at 6% 75%,rgba(79,140,255,.38),transparent),radial-gradient(30vmax 30vmax at 22% 102%,rgba(236,132,196,.28),transparent),radial-gradient(34vmax 34vmax at 80% 38%,rgba(255,150,130,.26),transparent),radial-gradient(32vmax 32vmax at 96% 92%,rgba(244,114,182,.26),transparent),radial-gradient(34vmax 34vmax at 58% -6%,rgba(150,130,250,.26),transparent),linear-gradient(135deg,#0e1320,#121827 50%,#161524);background-attachment:fixed}}
+:root[data-theme="dark"] body{background:radial-gradient(38vmax 38vmax at 6% 75%,rgba(79,140,255,.38),transparent),radial-gradient(30vmax 30vmax at 22% 102%,rgba(236,132,196,.28),transparent),radial-gradient(34vmax 34vmax at 80% 38%,rgba(255,150,130,.26),transparent),radial-gradient(32vmax 32vmax at 96% 92%,rgba(244,114,182,.26),transparent),radial-gradient(34vmax 34vmax at 58% -6%,rgba(150,130,250,.26),transparent),linear-gradient(135deg,#0e1320,#121827 50%,#161524);background-attachment:fixed}
+.card,.wrap,.gw,header{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid var(--gbd);box-shadow:var(--sh)}
+th{background:var(--glass2)}
+button,.tools input,.tools select,.fld input,.fld select,.db input,.db select{background:var(--glass2)}
+header{top:14px;margin:14px 0 14px 14px;height:calc(100vh - 28px);border-radius:22px}
+@media (min-width:1100px){.gn{background:transparent}}
+@media (max-width:800px){header{top:auto;margin:10px;height:auto}}
+
+html:root:root{--bg:#0b0b0f;--card:#17171d;--tx:#f4f4f6;--mu:#9a9aa8;--bd:#272731;--ac:#a855f7;--ok:#34d399;--wa:#fb923c;--okb:rgba(52,211,153,.14);--wab:rgba(251,146,60,.14);--glass:#15151b;--glass2:#1d1d25;--gbd:#272731;--sh:none;color-scheme:dark}
+html:root:root body{background:radial-gradient(45vmax 45vmax at 0% 0%,rgba(168,85,247,.10),transparent),radial-gradient(40vmax 40vmax at 100% 100%,rgba(34,211,238,.06),transparent),#0b0b0f;background-attachment:fixed}
+.card,.wrap,.gw,header{background:var(--glass);-webkit-backdrop-filter:none;backdrop-filter:none;border:1px solid var(--gbd);box-shadow:none;border-radius:16px}
+header{background:#111116;border-radius:20px}
+#nav button{background:var(--glass2);border:1px solid var(--bd)}
+#nav button.on{background:#fff;color:#111;box-shadow:none;border-color:#fff}
+#nav button.on small{color:#555;opacity:1}
+button.pri,button.on{color:#fff}
+.kpi b{letter-spacing:-.5px}
+.c1{background:#a78bfa}.c2{background:#5eead4}
+th{background:var(--glass2)}
 </style></head><body>
 <div class="app"><header><h1>⚙️ CNC 머신 센터 <span class="mu">읽기 전용</span><small>Pusat Mesin CNC · Hanya Lihat (읽기 전용 = hanya baca)</small><small id="sub"></small></h1>
 <div class="lb"><b>날짜</b> <small>Tanggal</small></div><div class="db"><button id="dp" title="Hari sebelumnya">◀</button><input type="date" id="dt"><button id="dn" title="Hari berikutnya">▶</button><select id="hs"></select><button id="dh"><b>오늘</b><small>Hari ini</small></button><button id="dd" class="dg"><b>삭제</b><small>Hapus tgl</small></button></div>
@@ -129,8 +155,8 @@ const NAV=[['dash','대시보드','Dasbor (Dashboard)'],['sched','일정','Jadwa
 function save(){return;try{S.saved=new Date().toISOString();localStorage.setItem(KEY,JSON.stringify(pack()));toast('Tersimpan otomatis di browser')}catch(e){toast('Gagal simpan ke browser — gunakan Export / Backup')}}
 function toast(t){const e=$('toast');e.textContent=t;e.className='s';clearTimeout(toast.h);toast.h=setTimeout(()=>e.className='',1800)}
 const sel=r=>(r.done||0)-(r.need||0);
-const PAL=['#ff8fab','#8ecae6','#ffd166','#95d5b2','#b8a1e3','#f4a261','#a0c4ff','#caffbf'];
-const BC={jack:'#6f93c9',nicerbt:'#c98590',zoje:'#c2a56a'},BX=['#7fa88a','#9a8fc4','#8392a5','#d19a6e'];
+const PAL=['#a855f7','#22d3ee','#34d399','#f472b6','#818cf8','#fbbf24','#60a5fa','#c084fc'];
+const BC={jack:'#60a5fa',nicerbt:'#f472b6',zoje:'#fbbf24'},BX=['#34d399','#a78bfa','#94a3b8','#fb923c'];
 const brandColor=b=>{const k=String(b||'').trim().toLowerCase();if(BC[k])return BC[k];let x=0;for(const c of k)x=(x*31+c.charCodeAt(0))%97;return BX[x%BX.length]};
 const bars=o=>pie(o);
 function pie(o,cf){const k=Object.entries(o).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]),t=k.reduce((a,x)=>a+x[1],0);
@@ -204,7 +230,7 @@ const d0=new Date(mn);const d=new Date(d0.getFullYear(),d0.getMonth(),1);
 while(d.getTime()<=mx){const x=Math.max(0,pc(d.getTime()));lines+=`<span class="ml" style="left:${x}%"></span>`;lab+=`<span class="gm" style="left:${x}%">${d.toLocaleDateString('id-ID',{month:'short',year:'2-digit'})}</span>`;d.setMonth(d.getMonth()+1)}
 lines+=`<span class="td" style="left:${pc(td)}%" title="Hari ini"></span>`;
 const bar=(a,b,c,tip,txt)=>{const x=D(a),y=D(b);if(isNaN(x)||isNaN(y))return '';return `<i class="gb ${c}" style="left:${pc(x)}%;width:${Math.max(pc(y)-pc(x),.5)}%" title="${esc(tip)}">${esc(txt)}</i>`};
-return `<div class="gw"><h3>교체 일정 타임라인 <small class="id">Timeline Jadwal Change Over</small></h3><div class="lg"><span><i style="background:#9db8d8"></i>현재 일정 (Jadwal saat ini)</span><span><i style="background:#d9b99b"></i>교체 (Change over, jadwal berikutnya)</span><span><i style="background:#ef4444;width:3px;height:12px"></i>오늘 (Hari ini)</span></div><div class="gi"><div class="gr"><div class="gn"></div><div class="tr" style="height:20px">${lab}</div></div>${R.map(r=>`<div class="gr"><div class="gn">${esc(r.factory)}-${esc(r.no)} <span class="mu">${esc(r.brand)}</span></div><div class="tr">${lines}${bar(r.start,r.end,'c1',r.style+' | '+r.pattern+' | '+r.start+' s/d '+r.end,r.style)}${bar(r.co_start,r.co_end,'c2','CO: '+r.co_style+' | '+r.co_pattern+' | '+r.co_start+' s/d '+r.co_end,r.co_style)}</div></div>`).join('')}</div></div>`}
+return `<div class="gw"><h3>교체 일정 타임라인 <small class="id">Timeline Jadwal Change Over</small></h3><div class="lg"><span><i style="background:#a78bfa"></i>현재 일정 (Jadwal saat ini)</span><span><i style="background:#5eead4"></i>교체 (Change over, jadwal berikutnya)</span><span><i style="background:#ef4444;width:3px;height:12px"></i>오늘 (Hari ini)</span></div><div class="gi"><div class="gr"><div class="gn"></div><div class="tr" style="height:20px">${lab}</div></div>${R.map(r=>`<div class="gr"><div class="gn">${esc(r.factory)}-${esc(r.no)} <span class="mu">${esc(r.brand)}</span></div><div class="tr">${lines}${bar(r.start,r.end,'c1',r.style+' | '+r.pattern+' | '+r.start+' s/d '+r.end,r.style)}${bar(r.co_start,r.co_end,'c2','CO: '+r.co_style+' | '+r.co_pattern+' | '+r.co_start+' s/d '+r.co_end,r.co_style)}</div></div>`).join('')}</div></div>`}
 function tbl(k){
 const c=CFG[k],rows=S[k];const L=q.toLowerCase();
 const vis=rows.map((r,i)=>[r,i]).filter(([r])=>(!fac||r.factory==fac)&&(k!='pattern'||!ket||(sel(r)>=0?'Done':'on progres')==ket)&&(!L||Object.values(r).join(' ').toLowerCase().includes(L)));
